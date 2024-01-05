@@ -17,13 +17,14 @@ menu:
 - [Git repository](https://gitea.vylpes.xyz/rabbitlabs/vylbot-app)
 - [Report a bug](https://github.com/vylpes/vylbot-app/issues/new)
 - [Email helpdesk](mailto:helpdesk@vylpes.com)
+- [Help fund](https://ko-fi.com/vylpes)
 
 ## Versions
 | Version | Progress                              |
 | ------- | ------------------------------------- |
 | 3.1     | ![100%](https://progress-bar.dev/100) |
 | 3.2     | ![87%](https://progress-bar.dev/87)   |
-| 3.3     | ![87%](https://progress-bar.dev/87)   |
-| 3.4     | ![87%](https://progress-bar.dev/87)   |
+| 3.3     | ![0%](https://progress-bar.dev/0)     |
+| 3.4     | ![0%](https://progress-bar.dev/0)     |
 
 ## Articles
