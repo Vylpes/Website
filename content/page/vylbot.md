@@ -20,11 +20,12 @@ menu:
 - [Help fund](https://ko-fi.com/vylpes)
 
 ## Versions
-| Version | Progress                              |
-| ------- | ------------------------------------- |
-| 3.1     | ![100%](https://progress-bar.dev/100) |
-| 3.2     | ![87%](https://progress-bar.dev/87)   |
-| 3.3     | ![0%](https://progress-bar.dev/0)     |
-| 3.4     | ![0%](https://progress-bar.dev/0)     |
+| Version                          | Progress                              | Status         |
+| -------------------------------- | ------------------------------------- | -------------- |
+| 3.1                              | ![100%](https://progress-bar.dev/100) | Discontinued   |
+| [3.2](/posts/2024/02/vylbot-3-2) | ![100%](https://progress-bar.dev/100) | Latest         |
+| 3.3                              | ![0%](https://progress-bar.dev/0)     | In Development |
+| 3.4                              | ![0%](https://progress-bar.dev/0)     | Planned        |
 
 ## Articles
+- **02/02/2024**: [VylBot 3.2 Release](/posts/2024/02/vylbot-3-2)
