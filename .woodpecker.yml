@@ -6,7 +6,7 @@ clone:
 
 steps:
   build:
-    image: klakegg/hugo:0.92.2-ext-ubuntu
+    image: klakegg/hugo:0.111.3-ext-ubuntu
     commands:
       - hugo --minify
     when:
