@@ -16,7 +16,7 @@ steps:
     image: secoresearch/rsync
     secrets: [ ssh_key, ssh_known_hosts ]
     environment:
-      HOME: /tmp
+      HOME: /tmp/woodpecker
       SSH_PRIVATE_KEY: "$SSH_KEY"
       SSH_KNOWN_HOSTS: "$SSH_KNOWN_HOSTS"
       RSYNC_SOURCE: public/
