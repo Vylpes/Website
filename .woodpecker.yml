@@ -18,7 +18,7 @@ steps:
     environment:
       HOME: /tmp
       SSH_PRIVATE_KEY: $SSH_KEY
-      SSH_KNOWN_HOSTS: "$${SSH_KNOWN_HOSTS}"
+      SSH_KNOWN_HOSTS: $SSH_KNOWN_HOSTS
       RSYNC_SOURCE: public/
       RSYNC_TARGET: vylpes@192.168.68.120:/home/vylpes/apps/website
       RSYNC_OPTIONS: -avz --delete
