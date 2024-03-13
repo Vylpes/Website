@@ -1,9 +1,13 @@
 ---
 title: 'VylBot 3.2 Release'
 published: '2024-02-02'
+modified: '2024-03-13T19:27:00'
 categories: 'VylBot'
 slug: '2024/02/vylbot-3-2'
 ---
+
+> **13 March 2024** <br />
+> VylBot 3.2.1 has been released, fixing bugs and vulnerabilities. Please update when possible to ensure your security is kept up-to-date.
 
 This week has seen the release of VylBot 3.2! This has been a while in development as I've been juggling other projects, but am happy to finally have released it!
 
