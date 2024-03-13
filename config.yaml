@@ -91,11 +91,11 @@ menu:
           params:
               icon: brand-github
 
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com/vylpes
+        - identifier: kofi
+          name: Ko-Fi
+          url: https://ko-fi.com/vylpes
           params:
-              icon: brand-twitter
+              icon: brand-kofi
 
 related:
     includeNewer: true
