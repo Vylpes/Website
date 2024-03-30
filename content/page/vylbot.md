@@ -13,6 +13,12 @@ menu:
             icon: robot-solid
 ---
 
+VylBot is a discord bot built mostly for my own Discord server, however it can also be used elsewhere as well. The bot includes an extended discord.js client which includes a slash command handler, event handler, server-specific commands, and so on!
+
+Currently it is mostly just a mmoderation bot but I would like to add more "fun" commands to the bot, like the /bunny command, which shows a random bunny from the r/rabbits subsreddit!
+
+3.3 is planned to be a mostly light update, more working on touch-ups to the bot rather than add massive features.
+
 ## Links
 - [Git repository](https://gitea.vylpes.xyz/rabbitlabs/vylbot-app)
 - [Report a bug](https://github.com/vylpes/vylbot-app/issues/new)
