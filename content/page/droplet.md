@@ -10,7 +10,7 @@ menu:
     main:
         weight: -90
         params:
-            icon: droplet-solid
+            icon: core/poly/droplet
 ---
 
 Droplet is a stock management system for eBay which I am currently developing!

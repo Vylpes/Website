@@ -10,7 +10,7 @@ menu:
     main:
         weight: -90
         params:
-            icon: robot-solid
+            icon: core/poly/robot
 ---
 
 VylBot is a discord bot built mostly for my own Discord server, however it can also be used elsewhere as well. The bot includes an extended discord.js client which includes a slash command handler, event handler, server-specific commands, and so on!

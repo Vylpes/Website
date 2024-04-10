@@ -10,7 +10,7 @@ menu:
     main:
         weight: -90
         params:
-            icon: carrot-solid
+            icon: core/poly/package
 ---
 
 Random Bunny is an npm package for nodejs which lets you fetch a random image from a subreddit of your choosing! You can download it via [npm](https://www.npmjs.com/package/random-bunny).

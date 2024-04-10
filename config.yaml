@@ -89,13 +89,13 @@ menu:
           name: GitHub
           url: https://github.com/vylpes
           params:
-              icon: brand-github
+              icon: brand/colour/github
 
         - identifier: kofi
           name: Ko-Fi
           url: https://ko-fi.com/vylpes
           params:
-              icon: brand-kofi
+              icon: core/poly/donate
 
 related:
     includeNewer: true
