@@ -19,7 +19,7 @@ steps:
       - apk add rsync openssh-client
       - eval `ssh-agent -s`
       - echo "$SSH_KEY" | tr -d '\r' | ssh-add -
-      - rsync -e "ssh -o StrictHostKeyChecking=no" -r ./public/* vylpes@192.168.68.120:/home/vylpes/apps/website
+      - rsync -e "ssh -o StrictHostKeyChecking=no" -r ./public/* vylpes@192.168.1.115:/home/vylpes/apps/website
     when:
       event: push
       branch: [ main ]
