@@ -11,10 +11,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: ls -lah
     - name: Build Hugo
       uses: https://github.com/jakejarvis/hugo-build-action@v0.111.3
       with:
-        args: --minify
+        args: --minify --source .
     - name: Copy Files To Location
       run: cp -r ./public ${{ secrets.PROD_REPO_PATH }}
