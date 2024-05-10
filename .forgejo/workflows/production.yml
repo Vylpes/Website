@@ -17,6 +17,7 @@ jobs:
       uses: https://github.com/peaceiris/actions-hugo@v2
       with:
         hugo-version: '0.87.0'
+        extended: true
     - name: Build Hugo
       run: hugo --minify
     - name: Copy Files To Location
