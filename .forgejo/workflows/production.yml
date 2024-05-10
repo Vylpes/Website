@@ -21,4 +21,4 @@ jobs:
     - name: Build Hugo
       run: hugo --minify
     - name: Copy Files To Location
-      run: cp -r ./public ${{ secrets.PROD_REPO_PATH }}
+      run: cp -r ./public/ ${{ secrets.PROD_REPO_PATH }}
