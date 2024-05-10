@@ -11,6 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: ls -lah
     - name: Build Hugo
       uses: https://github.com/jakejarvis/hugo-build-action@v0.111.3
       with:
