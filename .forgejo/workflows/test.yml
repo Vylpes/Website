@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - feature/*
+      - hotfix/*
+      - renovate/*
+
+jobs:
+  build:
+    runs-on: node
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Hugo
+      uses: https://github.com/jakejarvis/hugo-build-action@0.111.3
+      with:
+        args: --minify

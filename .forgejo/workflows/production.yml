@@ -1,0 +1,19 @@
+name: Deploy To Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: node
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Hugo
+      uses: https://github.com/jakejarvis/hugo-build-action@0.111.3
+      with:
+        args: --minify
+    - name: Copy Files To Location
+      run: cp -r ./public ${{ secrets.PROD_REPO_PATH }}
