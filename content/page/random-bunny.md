@@ -25,8 +25,11 @@ Currently it only has an API through node itself, but I am currently working on 
 - [Help fund](https://ko-fi.com/vylpes)
 
 ## Versions
+
 | Version                          | Progress                              | Status         |
 | -------------------------------- | ------------------------------------- | -------------- |
 | 2.0                              | ![100%](https://progress-bar.dev/100) | Discontinued   |
-| 2.1                              | ![100%](https://progress-bar.dev/100) | Current        |
-| 2.2                              | ![84%](https://progress-bar.dev/84)   | In Development |
+| 2.1                              | ![100%](https://progress-bar.dev/100) | Discontinued   |
+| 2.2                              | ![100%](https://progress-bar.dev/100) | Current        |
+| 2.3                              | ![0%](https://progress-bar.dev/0)     | In Development |
+

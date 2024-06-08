@@ -21,12 +21,12 @@ Not much to say about it currently, as its currently still in early development,
 *Links will be made public at 0.1!*
 
 ## Versions
-| Version | Progress                              |
-| ------- | ------------------------------------- |
-| 0.1     | ![88%](https://progress-bar.dev/88)   |
-| 0.2     | ![0%](https://progress-bar.dev/0)     |
-| 0.3     | ![0%](https://progress-bar.dev/0)     |
-| 0.4     | ![0%](https://progress-bar.dev/0)     |
-| 1.0     | ![0%](https://progress-bar.dev/0)     |
+| Version | Progress                              | Status         |
+| ------- | ------------------------------------- | -------------- |
+| 0.1     | ![87%](https://progress-bar.dev/87)   | In Development |
+| 0.2     | ![0%](https://progress-bar.dev/0)     | Planned        |
+| 0.3     | ![0%](https://progress-bar.dev/0)     | Planned        |
+| 0.4     | ![0%](https://progress-bar.dev/0)     | Planned        |
+| 1.0     | ![0%](https://progress-bar.dev/0)     | Planned        |
 
 ## Articles

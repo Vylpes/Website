@@ -29,8 +29,8 @@ Currently it is mostly just a mmoderation bot but I would like to add more "fun"
 | Version                          | Progress                              | Status         |
 | -------------------------------- | ------------------------------------- | -------------- |
 | 3.1                              | ![100%](https://progress-bar.dev/100) | Discontinued   |
-| [3.2](/posts/2024/02/vylbot-3-2) | ![100%](https://progress-bar.dev/100) | Latest         |
-| 3.3                              | ![0%](https://progress-bar.dev/0)     | In Development |
+| [3.2](/posts/2024/02/vylbot-3-2) | ![100%](https://progress-bar.dev/100) | Current        |
+| 3.3                              | ![8%](https://progress-bar.dev/8)     | In Development |
 | 3.4                              | ![0%](https://progress-bar.dev/0)     | Planned        |
 
 ## Articles
