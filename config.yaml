@@ -103,6 +103,12 @@ menu:
           params:
               icon: core/poly/donate
 
+        - identifier: discord
+          name: Discord
+          url: https://go.vylpes.xyz/A6HcA
+          params: 
+              icon: brand/colour/discord
+
 related:
     includeNewer: true
     threshold: 60
