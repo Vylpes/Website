@@ -19,4 +19,4 @@ jobs:
         hugo-version: '0.87.0'
         extended: true
     - name: Build Hugo
-      run: hugo --minify
+      run: hugo
