@@ -2,10 +2,10 @@
 title: Random Bunny
 description: Get a random image url from a subreddit of your choosing.
 date: '2024-03-30'
+modified: '2024-08-16T23:16:00'
 aliases:
     - random-bunny
 license: CC BY-NC-ND
-lastmod: '2024-03-30'
 menu:
     main:
         weight: -90
@@ -26,10 +26,13 @@ Currently it only has an API through node itself, but I am currently working on 
 
 ## Versions
 
-| Version                                | Progress                              | Status         |
-| -------------------------------------- | ------------------------------------- | -------------- |
-| 2.0                                    | ![100%](https://progress-bar.dev/100) | Discontinued   |
-| 2.1                                    | ![100%](https://progress-bar.dev/100) | Discontinued   |
-| [2.2](/posts/2024/06/random-bunny-2-2) | ![100%](https://progress-bar.dev/100) | Current        |
-| 2.3                                    | ![86%](https://progress-bar.dev/86)   | In Development |
+| Version                                | Progress                                         | Status       |
+| -------------------------------------- | ------------------------------------------------ | ------------ |
+| 2.0                                    | 100% <progress max="100" value="100"></progress> | Discontinued |
+| 2.1                                    | 100% <progress max="100" value="100"></progress> | Discontinued |
+| [2.2](/posts/2024/06/random-bunny-2-2) | 100% <progress max="100" value="100"></progress> | Discontinued |
+| [2.3](/posts/2024/08/random-bunny-2-3) | 100% <progress max="100" value="100"></progress> | Current      |
 
+## Articles
+- **07/08/2024**: [Random Bunny 2.3 Release](/posts/2024/08/random-bunny-2-3)
+- **08/06/2024**: [Random Bunny 2.2 Release](/posts/2024/06/random-bunny-2-2)

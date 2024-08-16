@@ -2,10 +2,10 @@
 title: Droplet
 description: Stock management system for eBay
 date: '2024-01-19'
+modified: '2024-08-16T23:16:00'
 aliases:
     - droplet
 license: CC BY-NC-ND
-lastmod: '2024-01-19'
 menu:
     main:
         weight: -90
@@ -21,12 +21,12 @@ Not much to say about it currently, as its currently still in early development,
 *Links will be made public at 0.1!*
 
 ## Versions
-| Version | Progress                              | Status         |
-| ------- | ------------------------------------- | -------------- |
-| 0.1     | ![87%](https://progress-bar.dev/87)   | In Development |
-| 0.2     | ![0%](https://progress-bar.dev/0)     | Planned        |
-| 0.3     | ![0%](https://progress-bar.dev/0)     | Planned        |
-| 0.4     | ![0%](https://progress-bar.dev/0)     | Planned        |
-| 1.0     | ![0%](https://progress-bar.dev/0)     | Planned        |
+| Version | Progress                                       | Status         |
+| ------- | ---------------------------------------------- | -------------- |
+| 0.1     | 87% <progress max="100" value="87"></progress> | In Development |
+| 0.2     | 0%                                             | Planned        |
+| 0.3     | 0%                                             | Planned        |
+| 0.4     | 0%                                             | Planned        |
+| 1.0     | 0%                                             | Planned        |
 
 ## Articles
