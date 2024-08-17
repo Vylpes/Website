@@ -30,7 +30,7 @@ Currently it is mostly just a mmoderation bot but I would like to add more "fun"
 | -------------------------------- | ------------------------------------------------ | -------------- |
 | 3.1                              | <progress max="100" value="100"></progress> 100% | Discontinued   |
 | [3.2](/posts/2024/02/vylbot-3-2) | <progress max="100" value="100"></progress> 100% | Current        |
-| 3.3                              | <progress max="100" value="8"></progress> 8%     | In Development |
+| 3.3                              | <progress max="100" value="48"></progress> 48%   | In Development |
 | 3.4                              | 0%                                               | Planned        |
 
 ## Articles
