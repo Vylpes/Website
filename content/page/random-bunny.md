@@ -20,6 +20,7 @@ It also has a CLI you can use to interact with it as well! This can be downloade
 ## Links
 - [Git repository](https://git.vylpes.xyz/rabbitlabs/random-bunny)
 - [NPM](https://www.npmjs.com/package/random-bunny)
+- [Documentation](https://docs.vylpes.xyz/books/random-bunny)
 - [Report a bug](https://github.com/vylpes/random-bunny/issues/new)
 - [Email helpdesk](mailto:helpdesk@vylpes.com)
 - [Help fund](https://ko-fi.com/vylpes)
