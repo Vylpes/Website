@@ -2,7 +2,7 @@
 title: VylBot
 description: Discord bot for Vylpes' Den Discord Server
 date: '2024-01-05'
-modified: '2024-08-16T23:16:00'
+modified: '2024-09-07T13:38:00'
 aliases:
     - vylbot
 license: CC BY-NC-ND
@@ -28,7 +28,6 @@ Currently it is mostly just a mmoderation bot but I would like to add more "fun"
 ## Versions
 | Version                          | Progress                                         | Status         |
 | -------------------------------- | ------------------------------------------------ | -------------- |
-| 3.1                              | <progress max="100" value="100"></progress> 100% | Discontinued   |
 | [3.2](/posts/2024/02/vylbot-3-2) | <progress max="100" value="100"></progress> 100% | Current        |
 | 3.3                              | <progress max="100" value="48"></progress> 48%   | In Development |
 | 3.4                              | 0%                                               | Planned        |

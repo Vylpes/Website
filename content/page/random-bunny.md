@@ -2,7 +2,7 @@
 title: Random Bunny
 description: Get a random image url from a subreddit of your choosing.
 date: '2024-03-30'
-modified: '2024-08-16T23:16:00'
+modified: '2024-09-07T13:38:00'
 aliases:
     - random-bunny
 license: CC BY-NC-ND
@@ -15,10 +15,10 @@ menu:
 
 Random Bunny is an npm package for nodejs which lets you fetch a random image from a subreddit of your choosing! You can download it via [npm](https://www.npmjs.com/package/random-bunny).
 
-Currently it only has an API through node itself, but I am currently working on a CLI for it as well, currently planned for v2.2
+It also has a CLI you can use to interact with it as well! This can be downloaded via the releases page of the git repository.
 
 ## Links
-- [Git repository](https://gitea.vylpes.xyz/rabbitlabs/random-bunny)
+- [Git repository](https://git.vylpes.xyz/rabbitlabs/random-bunny)
 - [NPM](https://www.npmjs.com/package/random-bunny)
 - [Report a bug](https://github.com/vylpes/random-bunny/issues/new)
 - [Email helpdesk](mailto:helpdesk@vylpes.com)
@@ -26,12 +26,16 @@ Currently it only has an API through node itself, but I am currently working on 
 
 ## Versions
 
-| Version                                | Progress                                         | Status       |
-| -------------------------------------- | ------------------------------------------------ | ------------ |
-| 2.0                                    | 100% <progress max="100" value="100"></progress> | Discontinued |
-| 2.1                                    | 100% <progress max="100" value="100"></progress> | Discontinued |
-| [2.2](/posts/2024/06/random-bunny-2-2) | 100% <progress max="100" value="100"></progress> | Discontinued |
-| [2.3](/posts/2024/08/random-bunny-2-3) | 100% <progress max="100" value="100"></progress> | Current      |
+| Version                                | Progress                                         | Status         |
+| -------------------------------------- | ------------------------------------------------ | -------------- |
+| [2.3](/posts/2024/08/random-bunny-2-3) | 100% <progress max="100" value="100"></progress> | Current        |
+| 2.4                                    | 7% <progress max="100" value="7"></progress>     | In Development |
+
+### Previous Versions
+
+| Version                                | Progress                                         | Status         |
+| -------------------------------------- | ------------------------------------------------ | -------------- |
+| [2.2](/posts/2024/06/random-bunny-2-2) | 100% <progress max="100" value="100"></progress> | Discontinued   |
 
 ## Articles
 - **07/08/2024**: [Random Bunny 2.3 Release](/posts/2024/08/random-bunny-2-3)
