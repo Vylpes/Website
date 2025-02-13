@@ -1,0 +1,11 @@
+services:
+  web:
+    image: nginx
+    volumes:
+     - ./templates:/etc/nginx/templates
+     - ./data:/data
+    ports:
+     - "9001:80"
+    environment:
+     - NGINX_HOST=vylpes.com
+     - NGINX_PORT=80
