@@ -1,9 +1,11 @@
 baseurl: https://vylpes.com
 languageCode: en-gb
 theme: hugo-theme-stack
-paginate: 10
 title: Vylpes
 copyright: Vylpes
+
+pagination:
+  pagerSize: 10
 
 permalinks:
     post: /posts/:slug/
