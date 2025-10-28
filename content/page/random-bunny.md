@@ -2,7 +2,7 @@
 title: Random Bunny
 description: Get a random image url from a subreddit of your choosing.
 date: '2024-03-30'
-modified: '2024-09-07T13:38:00'
+modified: '2025-10-28T18:19:00'
 aliases:
     - random-bunny
 license: CC BY-NC-ND
@@ -29,15 +29,16 @@ It also has a CLI you can use to interact with it as well! This can be downloade
 
 | Version                                | Progress                                         | Status         |
 | -------------------------------------- | ------------------------------------------------ | -------------- |
-| [2.3](/posts/2024/08/random-bunny-2-3) | 100% <progress max="100" value="100"></progress> | Current        |
-| 2.4                                    | 7% <progress max="100" value="7"></progress>     | In Development |
+| [2.4](/posts/2025/09/random-bunny-2-4) | 100% <progress max="100" value="100"></progress> | Current        |
 
 ### Previous Versions
 
 | Version                                | Progress                                         | Status         |
 | -------------------------------------- | ------------------------------------------------ | -------------- |
 | [2.2](/posts/2024/06/random-bunny-2-2) | 100% <progress max="100" value="100"></progress> | Discontinued   |
+| [2.3](/posts/2024/08/random-bunny-2-3) | 100% <progress max="100" value="100"></progress> | Discontinued   |
 
 ## Articles
+- **23/09/2025**: [Random Bunny 2.4 Release](/posts/2025/09/random-bunny-2-4)
 - **07/08/2024**: [Random Bunny 2.3 Release](/posts/2024/08/random-bunny-2-3)
 - **08/06/2024**: [Random Bunny 2.2 Release](/posts/2024/06/random-bunny-2-2)
