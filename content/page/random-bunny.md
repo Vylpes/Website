@@ -30,6 +30,7 @@ It also has a CLI you can use to interact with it as well! This can be downloade
 | Version                                | Progress                                         | Status         |
 | -------------------------------------- | ------------------------------------------------ | -------------- |
 | [2.4](/posts/2025/09/random-bunny-2-4) | 100% <progress max="100" value="100"></progress> | Current        |
+| 2.5                                    | 0% <progress max="100" value="0"></progress>     | In Development |
 
 ### Previous Versions
 
