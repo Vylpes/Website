@@ -1,9 +1,13 @@
 ---
 title: 'Random Bunny 2.4 Release'
 published: '2025-09-23'
+modified: '2025-10-28T18:16:00'
 categories: 'Random Bunny'
 slug: '2025/09/random-bunny-2-4'
 ---
+
+> **28 October 2025** <br />
+> Random Bunny 2.4.1 has been released, fixing a mistake in the build pipeline where code wasn't available in npm.
 
 Random Bunny 2.4 has now been released and includes the following changes:
 
