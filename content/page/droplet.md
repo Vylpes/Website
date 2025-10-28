@@ -6,11 +6,6 @@ modified: '2024-08-16T23:16:00'
 aliases:
     - droplet
 license: CC BY-NC-ND
-menu:
-    main:
-        weight: -90
-        params:
-            icon: core/poly/droplet
 ---
 
 Droplet is a stock management system for eBay which I am currently developing!
