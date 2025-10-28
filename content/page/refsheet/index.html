@@ -1,0 +1,7 @@
+<html>
+    <body>
+        {{ with .Resources.Get "./style.css" }}
+            <style>{{ .Content | safeCSS }}</style>
+        {{ end }}
+    </body>
+</html>
