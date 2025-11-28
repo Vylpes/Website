@@ -48,11 +48,17 @@ and loves to try encourage his friends to put in their all.
 ## Gallery
 <div class="gallery-row">
     <div class="gallery-column">
-        <img src="./gallery/Bunny.png">
+        <div>
+            <img src="./gallery/Bunny.png">
+            <p>by <a href="https://www.furaffinity.net/user/veemonsito/" target="_blank">@Veemonsito</a></p>
+        </div>
         <img src="./gallery/Bunny01.jpg">
     </div>
     <div class="gallery-column">
-        <img src="./gallery/Bunny02.jpg">
+        <div>
+            <img src="./gallery/Bunny02.jpg">
+            <p>by <a href="https://www.furaffinity.net/user/aussierigby/" target="_blank">@AussieRigby</a></p>
+        </div>
         <img src="./gallery/Bunny_Sit.PNG">
     </div>
     <div class="gallery-column">
