@@ -46,27 +46,29 @@ quite adventurous and loves to discover new things. He tries to be kind to all
 and loves to try encourage his friends to put in their all.
 
 ## Gallery
+*Click on an image to see full resolution image in a new tab*
+
 <div class="gallery-row">
     <div class="gallery-column">
         <div>
-            <img src="./gallery/Bunny.png">
+            <a href="./gallery/Bunny.png" target="_blank"><img src="./gallery-preview/Bunny.png"></a>
             <p>by <a href="https://www.furaffinity.net/user/veemonsito/" target="_blank">@Veemonsito</a></p>
         </div>
-        <img src="./gallery/Bunny01.jpg">
+        <a href="./gallery/Bunny01.jpg" target="_blank"><img src="./gallery-preview/Bunny01.jpg"></a>
     </div>
     <div class="gallery-column">
         <div>
-            <img src="./gallery/Bunny02.jpg">
+            <a href="./gallery/Bunny02.jpg" target="_blank"><img src="./gallery-preview/Bunny02.jpg"></a>
             <p>by <a href="https://www.furaffinity.net/user/aussierigby/" target="_blank">@AussieRigby</a></p>
         </div>
-        <img src="./gallery/Bunny_Sit.PNG">
+        <a href="./gallery/Bunny_Sit.PNG" target="_blank"><img src="./gallery-preview/Bunny_Sit.PNG"></a>
     </div>
     <div class="gallery-column">
-        <img src="./gallery/Bunny_Wave.png">
-        <img src="./gallery/vylHug.png">
+        <a href="./gallery/Bunny_Wave.png" target="_blank"><img src="./gallery-preview/Bunny_Wave.png"></a>
+        <a href="./gallery/vylHug.png" target="_blank"><img src="./gallery-preview/vylHug.png"></a>
     </div>
     <div class="gallery-column">
-        <img src="./gallery/vylPeak.png">
-        <img src="./gallery/vylXD_Full.png">
+        <a href="./gallery/vylPeak.png" target="_blank"><img src="./gallery-preview/vylPeak.png"></a>
+        <a href="./gallery/vylXD_Full.png" target="_blank"><img src="./gallery-preview/vylXD_Full.png"></a>
     </div>
 </div>
