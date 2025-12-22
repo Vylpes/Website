@@ -111,6 +111,18 @@ menu:
           params: 
               icon: brand/colour/discord
 
+        - identifier: twitch
+          name: Twitch
+          url: https://twitch.tv/Vylpes_
+          params:
+              icon: brand/colour/twitch
+
+        - identifier: youtube
+          name: YouTube
+          url: https://www.youtube.com/@Vylpes
+          params:
+            icon: brand/colour/youtube
+
 related:
     includeNewer: true
     threshold: 60
