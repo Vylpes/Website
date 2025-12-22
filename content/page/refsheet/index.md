@@ -55,6 +55,10 @@ and loves to try encourage his friends to put in their all.
             <p>by <a href="https://www.furaffinity.net/user/veemonsito/" target="_blank">@Veemonsito</a></p>
         </div>
         <a href="./gallery/Bunny01.jpg" target="_blank"><img src="./gallery-preview/Bunny01.jpg"></a>
+        <div>
+            <a href="./gallery/Christmas_2025.png" target="_blank"><img src="./gallery-preview/Christmas_2025.png"></a>
+            <p>by <a href="https://www.instagram.com/artzrilay/" target="_blank">@ArtzRilay</a></p>
+        </div>
     </div>
     <div class="gallery-column">
         <div>
