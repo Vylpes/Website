@@ -21,4 +21,4 @@ jobs:
     - name: Build Hugo
       run: hugo
     - name: Copy Files To Location
-      run: rsync -rvzP --delete ./public/* ${{ secrets.PROD_REPO_PATH }}
+      run: /usr/bin/rsync -rvzP --delete ./public/* ${{ secrets.PROD_REPO_PATH }}
