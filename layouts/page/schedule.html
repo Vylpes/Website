@@ -1,0 +1,380 @@
+{{ define "main" }}
+<article class="schedule-page">
+    <header class="article-header">
+        <h1 class="article-title">{{ .Title }}</h1>
+        <div class="article-subtitle">
+            {{ .Content }}
+        </div>
+    </header>
+
+    <style>
+        .schedule-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .schedule-card {
+            background: var(--card-background);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .schedule-card.live {
+            border-color: #9146FF;
+            background: linear-gradient(135deg, rgba(145, 70, 255, 0.1) 0%, var(--card-background) 100%);
+        }
+
+        .schedule-card.live::before {
+            content: "🔴 LIVE";
+            display: inline-block;
+            background: #9146FF;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        .schedule-card.discord {
+            border-color: #5865F2;
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.1) 0%, var(--card-background) 100%);
+            box-shadow: 0 4px 12px rgba(88, 101, 242, 0.3);
+        }
+
+        .schedule-card.discord:hover {
+            box-shadow: 0 8px 16px rgba(88, 101, 242, 0.4);
+        }
+
+        .schedule-card.discord::before {
+            content: "🔴 LIVE";
+            display: inline-block;
+            background: #5865F2;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .time-slot {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.75rem 0;
+            padding: 0.5rem;
+            background: var(--body-background);
+            border-radius: 6px;
+        }
+
+        .time-icon {
+            font-size: 1.2rem;
+        }
+
+        .time-info {
+            flex: 1;
+        }
+
+        .time {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .activity {
+            font-size: 0.9rem;
+            color: var(--card-text-color-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .game-tag {
+            display: inline-block;
+            background: var(--accent-color);
+            color: black;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .discord-button {
+            display: inline-block;
+            background: #5865F2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 0.75rem;
+            transition: background 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .discord-button:hover {
+            background: #4752C4;
+        }
+
+        .no-stream {
+            opacity: 0.6;
+            font-style: italic;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .timezone-note {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--card-background);
+            border-radius: 8px;
+            color: var(--card-text-color-secondary);
+        }
+
+        .twitch-link {
+            display: inline-block;
+            background: #9146FF;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: background 0.2s;
+        }
+
+        .twitch-link:hover {
+            background: #772CE8;
+        }
+
+        @media (max-width: 768px) {
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .vods-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--card-background);
+        }
+
+        .vods-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .vods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .vod-card {
+            background: var(--card-background);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .vod-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .vod-thumbnail {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: linear-gradient(135deg, rgba(145, 70, 255, 0.2) 0%, rgba(145, 70, 255, 0.05) 100%);
+            overflow: hidden;
+        }
+
+        .vod-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .vod-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            transition: background 0.2s;
+        }
+
+        .vod-card:hover .vod-play-icon {
+            background: rgba(145, 70, 255, 0.9);
+        }
+
+        .vod-info {
+            padding: 1rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .vod-icon {
+            font-size: 1.5rem;
+        }
+
+        .vod-details {
+            flex: 1;
+        }
+
+        .vod-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: white;
+        }
+
+        .vod-channel {
+            font-size: 0.9rem;
+            color: var(--card-text-color-secondary);
+        }
+    </style>
+
+    <div class="schedule-container">
+        {{ with .Params.timezone }}
+        <div class="timezone-note">
+            ⏰ All times shown in {{ . }}
+        </div>
+        {{ end }}
+
+        <div class="schedule-grid">
+            {{ $schedule := .Params.schedule }}
+            {{ $days := slice "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday" }}
+            {{ $dayNames := dict "monday" "Monday" "tuesday" "Tuesday" "wednesday" "Wednesday" "thursday" "Thursday" "friday" "Friday" "saturday" "Saturday" "sunday" "Sunday" }}
+            {{ $currentDay := now.Weekday | lower }}
+            
+            {{ range $days }}
+                {{ $dayKey := . }}
+                {{ $dayName := index $dayNames $dayKey }}
+                {{ $daySchedule := index $schedule $dayKey }}
+                {{ $isToday := eq $dayKey $currentDay }}
+                
+                {{ if $daySchedule }}
+                    {{ range $daySchedule }}
+                        <div class="schedule-card{{ if and $isToday (not .discord) }} live{{ end }}{{ if and $isToday .discord }} discord{{ end }}">
+                            <div class="day-title">{{ $dayName }}</div>
+                            <div class="time-slot">
+                                <div class="time-icon">{{ .icon }}</div>
+                                <div class="time-info">
+                                    <div class="time">{{ .time }}</div>
+                                    <div class="activity">{{ .activity }}</div>
+                                    {{ with .tag }}
+                                    <span class="game-tag">{{ . }}</span>
+                                    {{ end }}
+                                </div>
+                            </div>
+                            {{ if .discord }}
+                                {{ if $.Params.discord_url }}
+                                <div style="text-align: center;">
+                                    <a href="{{ $.Params.discord_url }}" class="discord-button" target="_blank">
+                                        💬 Join on Discord
+                                    </a>
+                                </div>
+                                {{ end }}
+                            {{ else if and $isToday ($.Params.twitch_url) }}
+                                <div style="text-align: center;">
+                                    <a href="{{ $.Params.twitch_url }}" class="discord-button" style="background: #9146FF;" target="_blank">
+                                        📺 Watch on Twitch
+                                    </a>
+                                </div>
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                {{ else }}
+                    <div class="schedule-card">
+                        <div class="day-title">{{ $dayName }}</div>
+                        <div class="no-stream">No stream scheduled</div>
+                    </div>
+                {{ end }}
+            {{ end }}
+        </div>
+
+
+
+        {{ with .Params.vods }}
+        <div class="vods-section">
+            <h2 class="vods-title">Latest Videos</h2>
+            <div class="vods-grid">
+                {{ range . }}
+                {{ $vod := . }}
+                <a href="{{ .url }}" class="vod-card" target="_blank">
+                    {{ with .thumbnail }}
+                    <div class="vod-thumbnail">
+                        <img src="{{ . }}" alt="{{ $vod.title }}" loading="lazy">
+                        <div class="vod-play-icon">▶</div>
+                    </div>
+                    {{ end }}
+                    <div class="vod-info">
+                        <div class="vod-icon">{{ .icon }}</div>
+                        <div class="vod-details">
+                            <div class="vod-title">{{ .title }}</div>
+                            <div class="vod-channel">{{ .channel }}</div>
+                        </div>
+                    </div>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+
+        {{ with .Params.twitch_url }}
+        <div class="timezone-note" style="margin-top: 2rem;">
+            💡 <strong>Note:</strong> Schedule is subject to change. Follow me on <a href="{{ . }}" target="_blank">Twitch</a> to get notified when I go live!
+        </div>
+        {{ end }}
+    </div>
+</article>
+{{ end }}
