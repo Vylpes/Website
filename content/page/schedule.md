@@ -56,9 +56,9 @@ schedule:
   
   sunday:
     - time: "19:30 - 23:00"
-      activity: "Paper Mario: The Thousand-Year Door (2024)"
-      icon: "🎮"
-      tag: "Let's Play"
+      activity: "Balatro"
+      icon: "❓"
+      tag: "Variety Day"
 ---
 
 Join me live on [Twitch](https://twitch.tv/Vylpes_) for gaming and community fun!
