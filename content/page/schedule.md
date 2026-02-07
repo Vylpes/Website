@@ -18,9 +18,9 @@ vods:
     thumbnail: "https://i1.ytimg.com/vi/sFnfqKWLMuM/hqdefault.jpg"
     channel: "Vylpes | Latest Stream Highlights"
     icon: "✨"
-  - title: "Fixed Audio Levels Maybe Hype?? Paper Mario: The Thousand-Year Door (#5) | 2026-02-03"
-    url: "https://www.youtube.com/watch?v=G1a0DBx9D5I"
-    thumbnail: "https://img.youtube.com/vi/G1a0DBx9D5I/maxresdefault.jpg"
+  - title: "FINALE Paper Mario: The Thousand-Year Door (#6) | 2026-02-05"
+    url: "https://www.youtube.com/watch?v=oOd3Te05W2E"
+    thumbnail: "https://img.youtube.com/vi/oOd3Te05W2E/maxresdefault.jpg"
     channel: "Vylpes' Hideout | Latest VOD"
     icon: "📺"
 
