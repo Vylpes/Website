@@ -12,6 +12,11 @@ timezone: "GMT (UTC+0)"
 twitch_url: "https://twitch.tv/Vylpes_"
 discord_url: "https://discord.gg/UyAhAVp"
 
+vacation:
+    enabled: true
+    reason: "Lent"
+    return_date: "5th April 2026"
+
 vods:
   - title: "THE ULTIMATE THUMBNAIL SHOT?! | Super Mario Maker 2 Multiplayer VS"
     url: "https://www.youtube.com/watch?v=sFnfqKWLMuM"

@@ -182,6 +182,39 @@
             }
         }
 
+        .vacation-banner {
+            background: linear-gradient(135deg, rgba(255, 180, 0, 0.15) 0%, rgba(255, 140, 0, 0.1) 100%);
+            border: 2px solid #ffb400;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .vacation-banner .vacation-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffb400;
+            margin-bottom: 0.5rem;
+        }
+
+        .vacation-banner .vacation-reason {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--body-text-color);
+        }
+
+        .vacation-banner .vacation-return {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--body-text-color);
+        }
+
+        .schedule-grid.on-vacation .schedule-card {
+            opacity: 0.45;
+            pointer-events: none;
+        }
+
         .vods-section {
             margin-top: 3rem;
             padding-top: 2rem;
@@ -290,7 +323,17 @@
         </div>
         {{ end }}
 
-        <div class="schedule-grid">
+        {{ with .Params.vacation }}
+        {{ if .enabled }}
+        <div class="vacation-banner">
+            <div class="vacation-title">🏖️ Currently on Vacation</div>
+            {{ with .reason }}<div class="vacation-reason">{{ . }}</div>{{ end }}
+            {{ with .return_date }}<div class="vacation-return">Expected return: {{ . }}</div>{{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <div class="schedule-grid{{ if and .Params.vacation .Params.vacation.enabled }} on-vacation{{ end }}" data-vacation="{{ if and .Params.vacation .Params.vacation.enabled }}true{{ else }}false{{ end }}">
             {{ $schedule := .Params.schedule }}
             {{ $days := slice "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday" }}
             {{ $dayNames := dict "monday" "Monday" "tuesday" "Tuesday" "wednesday" "Wednesday" "thursday" "Thursday" "friday" "Friday" "saturday" "Saturday" "sunday" "Sunday" }}
@@ -390,6 +433,8 @@
     }
 
     function updateLiveStatus() {
+        var grid = document.querySelector('.schedule-grid[data-vacation]');
+        if (grid && grid.dataset.vacation === 'true') return;
         var now = new Date();
         var currentDay = DAY_NAMES[now.getUTCDay()];
         var currentMinutes = now.getUTCHours() * 60 + now.getUTCMinutes();
