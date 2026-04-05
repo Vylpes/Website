@@ -13,7 +13,7 @@ twitch_url: "https://twitch.tv/Vylpes_"
 discord_url: "https://discord.gg/UyAhAVp"
 
 vacation:
-    enabled: true
+    enabled: false
     reason: "Lent"
     return_date: "5th April 2026"
 
