@@ -316,130 +316,118 @@
         }
     </style>
 
-    <div class="schedule-container">
-        {{ with .Params.timezone }}
-        <div class="timezone-note">
-            ⏰ All times shown in {{ . }}
-        </div>
-        {{ end }}
-
-        {{ with .Params.vacation }}
-        {{ if .enabled }}
-        <div class="vacation-banner">
-            <div class="vacation-title">🏖️ Currently on Vacation</div>
-            {{ with .reason }}<div class="vacation-reason">{{ . }}</div>{{ end }}
-            {{ with .return_date }}<div class="vacation-return">Expected return: {{ . }}</div>{{ end }}
-        </div>
-        {{ end }}
-        {{ end }}
-
-        <div class="schedule-grid{{ if and .Params.vacation .Params.vacation.enabled }} on-vacation{{ end }}" data-vacation="{{ if and .Params.vacation .Params.vacation.enabled }}true{{ else }}false{{ end }}">
-            {{ $schedule := .Params.schedule }}
-            {{ $days := slice "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday" }}
-            {{ $dayNames := dict "monday" "Monday" "tuesday" "Tuesday" "wednesday" "Wednesday" "thursday" "Thursday" "friday" "Friday" "saturday" "Saturday" "sunday" "Sunday" }}
-            {{ $currentDay := now.Weekday | lower }}
-            
-            {{ range $days }}
-                {{ $dayKey := . }}
-                {{ $dayName := index $dayNames $dayKey }}
-                {{ $daySchedule := index $schedule $dayKey }}
-                {{ $isToday := eq $dayKey $currentDay }}
-                
-                {{ if $daySchedule }}
-                    {{ range $daySchedule }}
-                        <div class="schedule-card" data-day="{{ $dayKey }}" data-time="{{ .time }}" data-discord="{{ if .discord }}true{{ else }}false{{ end }}">
-                            <div class="day-title">{{ $dayName }}</div>
-                            <div class="time-slot">
-                                <div class="time-icon">{{ .icon }}</div>
-                                <div class="time-info">
-                                    <div class="time">{{ .time }}</div>
-                                    <div class="activity">{{ .activity }}</div>
-                                    {{ with .tag }}
-                                    <span class="game-tag">{{ . }}</span>
-                                    {{ end }}
-                                </div>
-                            </div>
-                            {{ if .discord }}
-                                {{ if $.Params.discord_url }}
-                                <div style="text-align: center;">
-                                    <a href="{{ $.Params.discord_url }}" class="discord-button" target="_blank">
-                                        💬 Join on Discord
-                                    </a>
-                                </div>
-                                {{ end }}
-                            {{ else }}
-                                {{ if $.Params.twitch_url }}
-                                <div class="twitch-live-btn" style="text-align: center; display: none;">
-                                    <a href="{{ $.Params.twitch_url }}" class="discord-button" style="background: #9146FF;" target="_blank">
-                                        📺 Watch on Twitch
-                                    </a>
-                                </div>
-                                {{ end }}
-                            {{ end }}
-                        </div>
-                    {{ end }}
-                {{ else }}
-                    <div class="schedule-card">
-                        <div class="day-title">{{ $dayName }}</div>
-                        <div class="no-stream">No stream scheduled</div>
-                    </div>
-                {{ end }}
-            {{ end }}
-        </div>
-
-
-
-        {{ with .Params.vods }}
-        <div class="vods-section">
-            <h2 class="vods-title">Latest Videos</h2>
-            <div class="vods-grid">
-                {{ range . }}
-                {{ $vod := . }}
-                <a href="{{ .url }}" class="vod-card" target="_blank">
-                    {{ with .thumbnail }}
-                    <div class="vod-thumbnail">
-                        <img src="{{ . }}" alt="{{ $vod.title }}" loading="lazy">
-                        <div class="vod-play-icon">▶</div>
-                    </div>
-                    {{ end }}
-                    <div class="vod-info">
-                        <div class="vod-icon">{{ .icon }}</div>
-                        <div class="vod-details">
-                            <div class="vod-title">{{ .title }}</div>
-                            <div class="vod-channel">{{ .channel }}</div>
-                        </div>
-                    </div>
-                </a>
-                {{ end }}
-            </div>
-        </div>
-        {{ end }}
-
-        {{ with .Params.twitch_url }}
-        <div class="timezone-note" style="margin-top: 2rem;">
-            💡 <strong>Note:</strong> Schedule is subject to change. Follow me on <a href="{{ . }}" target="_blank">Twitch</a> to get notified when I go live!
-        </div>
-        {{ end }}
+    <div class="schedule-container" id="schedule-container">
+        <div id="schedule-timezone"></div>
+        <div id="schedule-vacation"></div>
+        <div class="schedule-grid" id="schedule-grid"></div>
+        <div id="schedule-vods"></div>
+        <div id="schedule-footer"></div>
     </div>
 </article>
 
 <script>
 (function () {
+    var SCHEDULE_DATA_URL = "{{ site.Params.scheduleDataUrl }}";
     var DAY_NAMES = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    var DAY_LABELS = { monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday', thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday' };
+    var DAYS_ORDER = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
     function parseTime(str) {
         var parts = str.split(':');
         return parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
     }
 
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function renderSchedule(data) {
+        var vacation = data.vacation || {};
+        var onVacation = vacation.enabled === true;
+
+        if (data.timezone) {
+            document.getElementById('schedule-timezone').innerHTML =
+                '<div class="timezone-note">⏰ All times shown in ' + escapeHtml(data.timezone) + '</div>';
+        }
+
+        if (onVacation) {
+            var banner = '<div class="vacation-banner">' +
+                '<div class="vacation-title">🏖️ Currently on Vacation</div>';
+            if (vacation.reason) banner += '<div class="vacation-reason">' + escapeHtml(vacation.reason) + '</div>';
+            if (vacation.return_date) banner += '<div class="vacation-return">Expected return: ' + escapeHtml(vacation.return_date) + '</div>';
+            banner += '</div>';
+            document.getElementById('schedule-vacation').innerHTML = banner;
+        }
+
+        var grid = document.getElementById('schedule-grid');
+        if (onVacation) grid.classList.add('on-vacation');
+        grid.dataset.vacation = onVacation ? 'true' : 'false';
+
+        var schedule = data.schedule || {};
+        var cardsHtml = '';
+        DAYS_ORDER.forEach(function (dayKey) {
+            var daySchedule = schedule[dayKey];
+            var dayName = DAY_LABELS[dayKey];
+            if (daySchedule && daySchedule.length > 0) {
+                daySchedule.forEach(function (slot) {
+                    var isDiscord = slot.discord === true;
+                    cardsHtml += '<div class="schedule-card" data-day="' + dayKey + '" data-time="' + escapeHtml(slot.time || '') + '" data-discord="' + (isDiscord ? 'true' : 'false') + '">';
+                    cardsHtml += '<div class="day-title">' + escapeHtml(dayName) + '</div>';
+                    cardsHtml += '<div class="time-slot">';
+                    cardsHtml += '<div class="time-icon">' + escapeHtml(slot.icon || '') + '</div>';
+                    cardsHtml += '<div class="time-info">';
+                    cardsHtml += '<div class="time">' + escapeHtml(slot.time || '') + '</div>';
+                    cardsHtml += '<div class="activity">' + escapeHtml(slot.activity || '') + '</div>';
+                    if (slot.tag) cardsHtml += '<span class="game-tag">' + escapeHtml(slot.tag) + '</span>';
+                    cardsHtml += '</div></div>';
+                    if (isDiscord && data.discord_url) {
+                        cardsHtml += '<div style="text-align: center;"><a href="' + escapeHtml(data.discord_url) + '" class="discord-button" target="_blank">💬 Join on Discord</a></div>';
+                    } else if (!isDiscord && data.twitch_url) {
+                        cardsHtml += '<div class="twitch-live-btn" style="text-align: center; display: none;"><a href="' + escapeHtml(data.twitch_url) + '" class="discord-button" style="background: #9146FF;" target="_blank">📺 Watch on Twitch</a></div>';
+                    }
+                    cardsHtml += '</div>';
+                });
+            } else {
+                cardsHtml += '<div class="schedule-card"><div class="day-title">' + escapeHtml(dayName) + '</div><div class="no-stream">No stream scheduled</div></div>';
+            }
+        });
+        grid.innerHTML = cardsHtml;
+
+        if (data.vods && data.vods.length > 0) {
+            var vodsHtml = '<div class="vods-section"><h2 class="vods-title">Latest Videos</h2><div class="vods-grid">';
+            data.vods.forEach(function (vod) {
+                vodsHtml += '<a href="' + escapeHtml(vod.url) + '" class="vod-card" target="_blank">';
+                if (vod.thumbnail) {
+                    vodsHtml += '<div class="vod-thumbnail"><img src="' + escapeHtml(vod.thumbnail) + '" alt="' + escapeHtml(vod.title) + '" loading="lazy"><div class="vod-play-icon">▶</div></div>';
+                }
+                vodsHtml += '<div class="vod-info"><div class="vod-icon">' + escapeHtml(vod.icon || '') + '</div>';
+                vodsHtml += '<div class="vod-details"><div class="vod-title">' + escapeHtml(vod.title) + '</div><div class="vod-channel">' + escapeHtml(vod.channel) + '</div></div></div></a>';
+            });
+            vodsHtml += '</div></div>';
+            document.getElementById('schedule-vods').innerHTML = vodsHtml;
+        }
+
+        if (data.twitch_url) {
+            document.getElementById('schedule-footer').innerHTML =
+                '<div class="timezone-note" style="margin-top: 2rem;">💡 <strong>Note:</strong> Schedule is subject to change. Follow me on <a href="' + escapeHtml(data.twitch_url) + '" target="_blank">Twitch</a> to get notified when I go live!</div>';
+        }
+
+        updateLiveStatus();
+        setInterval(updateLiveStatus, 60000);
+    }
+
     function updateLiveStatus() {
-        var grid = document.querySelector('.schedule-grid[data-vacation]');
-        if (grid && grid.dataset.vacation === 'true') return;
+        var grid = document.getElementById('schedule-grid');
+        if (!grid || grid.dataset.vacation === 'true') return;
         var now = new Date();
         var currentDay = DAY_NAMES[now.getUTCDay()];
         var currentMinutes = now.getUTCHours() * 60 + now.getUTCMinutes();
 
-        document.querySelectorAll('.schedule-card[data-day]').forEach(function (card) {
+        grid.querySelectorAll('.schedule-card[data-day]').forEach(function (card) {
             var cardDay = card.dataset.day;
             var timeStr = card.dataset.time || '';
             var isDiscord = card.dataset.discord === 'true';
@@ -466,8 +454,13 @@
         });
     }
 
-    updateLiveStatus();
-    setInterval(updateLiveStatus, 60000);
+    fetch(SCHEDULE_DATA_URL)
+        .then(function (res) { return res.json(); })
+        .then(renderSchedule)
+        .catch(function (err) {
+            console.error('Failed to load schedule data from ' + SCHEDULE_DATA_URL, err);
+            document.getElementById('schedule-grid').innerHTML = '<div class="schedule-card"><div class="no-stream">Schedule unavailable</div></div>';
+        });
 })();
 </script>
 {{ end }}

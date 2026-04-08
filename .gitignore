@@ -14,3 +14,6 @@ hugo.linux
 /.hugo_build.lock
 
 .DS_Store
+
+# External schedule data (see static/schedule.example.json)
+/static/schedule.json

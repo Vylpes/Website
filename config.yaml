@@ -74,6 +74,8 @@ params:
         # Available values: auto, light, dark
         default: auto
 
+    scheduleDataUrl: "/schedule.json"
+
     imageProcessing:
         cover:
             enabled: true
@@ -108,7 +110,7 @@ menu:
         - identifier: discord
           name: Discord
           url: https://discord.gg/UyAhAVp
-          params: 
+          params:
               icon: brand/colour/discord
 
         - identifier: twitch
