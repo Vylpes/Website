@@ -29,10 +29,7 @@ params:
     sidebar:
         emoji: 🐰
         subtitle: Welcome to my website!
-        avatar:
-            enabled: true
-            local: true
-            src: img/avatar.png
+        avatar: img/avatar.png
 
     article:
         math: false
