@@ -1,5 +1,5 @@
 baseurl: https://vylpes.com
-languageCode: en-gb
+locale: en-gb
 theme: hugo-theme-stack
 title: Vylpes
 copyright: Vylpes
