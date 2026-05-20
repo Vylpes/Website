@@ -66,6 +66,10 @@ and loves to try encourage his friends to put in their all.
             <p>by <a href="https://www.furaffinity.net/user/aussierigby/" target="_blank">@AussieRigby</a></p>
         </div>
         <a href="./gallery/Bunny_Sit.PNG" target="_blank"><img src="./gallery-preview/Bunny_Sit.PNG"></a>
+        <div>
+            <a href="./gallery/Wave.png" target="_blank"><img src="./gallery-preview/Wave.png"></a>
+            <p>by <a href="https://www.instagram.com/artzrilay/" target="_blank">@ArtzRilay</a></p>
+        </div>
     </div>
     <div class="gallery-column">
         <a href="./gallery/Bunny_Wave.png" target="_blank"><img src="./gallery-preview/Bunny_Wave.png"></a>
