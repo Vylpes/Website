@@ -64,7 +64,8 @@
         "time": "19:30 - 23:00",
         "activity": "Balatro",
         "icon": "❓",
-        "tag": "Variety Day"
+        "tag": "Variety Day",
+        "live": true
       }
     ]
   }

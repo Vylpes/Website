@@ -375,7 +375,8 @@
             if (daySchedule && daySchedule.length > 0) {
                 daySchedule.forEach(function (slot) {
                     var isDiscord = slot.discord === true;
-                    cardsHtml += '<div class="schedule-card" data-day="' + dayKey + '" data-time="' + escapeHtml(slot.time || '') + '" data-discord="' + (isDiscord ? 'true' : 'false') + '">';
+                    var isManualLive = slot.live === true;
+                    cardsHtml += '<div class="schedule-card" data-day="' + dayKey + '" data-time="' + escapeHtml(slot.time || '') + '" data-discord="' + (isDiscord ? 'true' : 'false') + '" data-live="' + (isManualLive ? 'true' : 'false') + '">';
                     cardsHtml += '<div class="day-title">' + escapeHtml(dayName) + '</div>';
                     cardsHtml += '<div class="time-slot">';
                     cardsHtml += '<div class="time-icon">' + escapeHtml(slot.icon || '') + '</div>';
@@ -431,20 +432,25 @@
             var cardDay = card.dataset.day;
             var timeStr = card.dataset.time || '';
             var isDiscord = card.dataset.discord === 'true';
+            var hasManualLive = card.dataset.live === 'true';
 
             card.classList.remove('live', 'discord');
 
             var twitchBtn = card.querySelector('.twitch-live-btn');
             if (twitchBtn) twitchBtn.style.display = 'none';
 
-            if (cardDay !== currentDay) return;
+            var isLive = hasManualLive;
 
-            var isLive = true;
-            var match = timeStr.match(/(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})/);
-            if (match) {
-                var start = parseTime(match[1]);
-                var end = parseTime(match[2]);
-                isLive = currentMinutes >= start && currentMinutes <= end;
+            if (!hasManualLive) {
+                if (cardDay !== currentDay) return;
+
+                isLive = true;
+                var match = timeStr.match(/(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})/);
+                if (match) {
+                    var start = parseTime(match[1]);
+                    var end = parseTime(match[2]);
+                    isLive = currentMinutes >= start && currentMinutes <= end;
+                }
             }
 
             if (!isLive) return;
