@@ -74,6 +74,10 @@ and loves to try encourage his friends to put in their all.
     <div class="gallery-column">
         <a href="./gallery/Bunny_Wave.png" target="_blank"><img src="./gallery-preview/Bunny_Wave.png"></a>
         <a href="./gallery/vylHug.png" target="_blank"><img src="./gallery-preview/vylHug.png"></a>
+        <div>
+            <a href="./gallery/collab-tahaald.png" target="_blank"><img src="./gallery-preview/collab-tahaald.png"></a>
+            <p>by <a href="https://copihome.carrd.co/" target="_blank">@Copis</a>, with Tahaald</p>
+        </div>
     </div>
     <div class="gallery-column">
         <a href="./gallery/vylPeak.png" target="_blank"><img src="./gallery-preview/vylPeak.png"></a>
