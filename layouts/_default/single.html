@@ -32,6 +32,12 @@
         {{ end }}
     {{ end }}
 
+    {{ range .Params.js }}
+        {{ with $.Resources.Get . }}
+            <script>{{ .Content | safeJS }}</script>
+        {{ end }}
+    {{ end }}
+
     {{ if .Params.links }}
         {{ partial "article/components/links" . }}
     {{ end }}
