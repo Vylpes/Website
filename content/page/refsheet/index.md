@@ -101,20 +101,8 @@ and loves to try encourage his friends to put in their all.
     <div class="gallery-carousel__controls">
         <button type="button" class="gallery-carousel__nav" data-carousel-prev aria-label="Previous image">‹</button>
         <div class="gallery-carousel__meta">
-            <div class="gallery-carousel__counter" data-carousel-counter>1 / 11</div>
-            <div class="gallery-carousel__dots" role="tablist" aria-label="Gallery slides">
-                <button type="button" class="gallery-carousel__dot is-active" data-carousel-dot aria-label="Show image 1" aria-current="true"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 2"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 3"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 4"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 5"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 6"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 7"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 8"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 9"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 10"></button>
-                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 11"></button>
-            </div>
+            <div class="gallery-carousel__counter" data-carousel-counter></div>
+            <div class="gallery-carousel__dots" data-carousel-dots role="tablist" aria-label="Gallery slides"></div>
         </div>
         <button type="button" class="gallery-carousel__nav" data-carousel-next aria-label="Next image">›</button>
     </div>
