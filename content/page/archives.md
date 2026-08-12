@@ -1,4 +1,5 @@
 ---
-name: Archives
+title: Archives
 layout: archives
+slug: archives
 ---
