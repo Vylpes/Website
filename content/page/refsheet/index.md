@@ -7,6 +7,8 @@ aliases:
     - refsheet
 css:
     - "style.css"
+js:
+    - "carousel.js"
 menu:
     main:
         weight: -90
@@ -46,41 +48,75 @@ quite adventurous and loves to discover new things. He tries to be kind to all
 and loves to try encourage his friends to put in their all.
 
 ## Gallery
-*Click on an image to see full resolution image in a new tab*
 
-<div class="gallery-row">
-    <div class="gallery-column">
-        <div>
-            <a href="./gallery/Bunny.png" target="_blank"><img src="./gallery-preview/Bunny.png"></a>
-            <p>by <a href="https://www.furaffinity.net/user/veemonsito/" target="_blank">@Veemonsito</a></p>
-        </div>
-        <a href="./gallery/Bunny01.jpg" target="_blank"><img src="./gallery-preview/Bunny01.jpg"></a>
-        <div>
-            <a href="./gallery/Christmas_2025.png" target="_blank"><img src="./gallery-preview/Christmas_2025.png"></a>
-            <p>by <a href="https://www.instagram.com/artzrilay/" target="_blank">@ArtzRilay</a></p>
+<div class="gallery-carousel" data-gallery-carousel tabindex="0" aria-roledescription="carousel" aria-label="Refsheet gallery">
+    <div class="gallery-carousel__viewport">
+        <div class="gallery-carousel__track">
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/Bunny.png" target="_blank" rel="noopener"><img src="./gallery-preview/Bunny.png" alt="Bunny"></a>
+                <figcaption class="gallery-carousel__credit">by <a href="https://www.furaffinity.net/user/veemonsito/" target="_blank" rel="noopener">@Veemonsito</a></figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/Bunny01.jpg" target="_blank" rel="noopener"><img src="./gallery-preview/Bunny01.jpg" alt="Bunny 01"></a>
+                <figcaption class="gallery-carousel__credit"></figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/Christmas_2025.png" target="_blank" rel="noopener"><img src="./gallery-preview/Christmas_2025.png" alt="Christmas 2025"></a>
+                <figcaption class="gallery-carousel__credit">by <a href="https://www.instagram.com/artzrilay/" target="_blank" rel="noopener">@ArtzRilay</a></figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/Bunny02.jpg" target="_blank" rel="noopener"><img src="./gallery-preview/Bunny02.jpg" alt="Bunny 02"></a>
+                <figcaption class="gallery-carousel__credit">by <a href="https://www.furaffinity.net/user/aussierigby/" target="_blank" rel="noopener">@AussieRigby</a></figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/Bunny_Sit.PNG" target="_blank" rel="noopener"><img src="./gallery-preview/Bunny_Sit.PNG" alt="Bunny Sit"></a>
+                <figcaption class="gallery-carousel__credit"></figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/Wave.png" target="_blank" rel="noopener"><img src="./gallery-preview/Wave.png" alt="Wave"></a>
+                <figcaption class="gallery-carousel__credit">by <a href="https://www.instagram.com/artzrilay/" target="_blank" rel="noopener">@ArtzRilay</a></figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/Bunny_Wave.png" target="_blank" rel="noopener"><img src="./gallery-preview/Bunny_Wave.png" alt="Bunny Wave"></a>
+                <figcaption class="gallery-carousel__credit"></figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/vylHug.png" target="_blank" rel="noopener"><img src="./gallery-preview/vylHug.png" alt="Vyl Hug"></a>
+                <figcaption class="gallery-carousel__credit"></figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/collab-tahaald.png" target="_blank" rel="noopener"><img src="./gallery-preview/collab-tahaald.png" alt="Collab with Tahaald"></a>
+                <figcaption class="gallery-carousel__credit">by <a href="https://copihome.carrd.co/" target="_blank" rel="noopener">@Copis</a>, with Tahaald</figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/vylPeak.png" target="_blank" rel="noopener"><img src="./gallery-preview/vylPeak.png" alt="Vyl Peak"></a>
+                <figcaption class="gallery-carousel__credit"></figcaption>
+            </figure>
+            <figure class="gallery-carousel__slide">
+                <a href="./gallery/vylXD_Full.png" target="_blank" rel="noopener"><img src="./gallery-preview/vylXD_Full.png" alt="Vyl XD"></a>
+                <figcaption class="gallery-carousel__credit"></figcaption>
+            </figure>
         </div>
     </div>
-    <div class="gallery-column">
-        <div>
-            <a href="./gallery/Bunny02.jpg" target="_blank"><img src="./gallery-preview/Bunny02.jpg"></a>
-            <p>by <a href="https://www.furaffinity.net/user/aussierigby/" target="_blank">@AussieRigby</a></p>
+    <div class="gallery-carousel__controls">
+        <button type="button" class="gallery-carousel__nav" data-carousel-prev aria-label="Previous image">‹</button>
+        <div class="gallery-carousel__meta">
+            <div class="gallery-carousel__counter" data-carousel-counter>1 / 11</div>
+            <div class="gallery-carousel__dots" role="tablist" aria-label="Gallery slides">
+                <button type="button" class="gallery-carousel__dot is-active" data-carousel-dot aria-label="Show image 1" aria-current="true"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 2"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 3"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 4"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 5"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 6"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 7"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 8"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 9"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 10"></button>
+                <button type="button" class="gallery-carousel__dot" data-carousel-dot aria-label="Show image 11"></button>
+            </div>
         </div>
-        <a href="./gallery/Bunny_Sit.PNG" target="_blank"><img src="./gallery-preview/Bunny_Sit.PNG"></a>
-        <div>
-            <a href="./gallery/Wave.png" target="_blank"><img src="./gallery-preview/Wave.png"></a>
-            <p>by <a href="https://www.instagram.com/artzrilay/" target="_blank">@ArtzRilay</a></p>
-        </div>
+        <button type="button" class="gallery-carousel__nav" data-carousel-next aria-label="Next image">›</button>
     </div>
-    <div class="gallery-column">
-        <a href="./gallery/Bunny_Wave.png" target="_blank"><img src="./gallery-preview/Bunny_Wave.png"></a>
-        <a href="./gallery/vylHug.png" target="_blank"><img src="./gallery-preview/vylHug.png"></a>
-        <div>
-            <a href="./gallery/collab-tahaald.png" target="_blank"><img src="./gallery-preview/collab-tahaald.png"></a>
-            <p>by <a href="https://copihome.carrd.co/" target="_blank">@Copis</a>, with Tahaald</p>
-        </div>
-    </div>
-    <div class="gallery-column">
-        <a href="./gallery/vylPeak.png" target="_blank"><img src="./gallery-preview/vylPeak.png"></a>
-        <a href="./gallery/vylXD_Full.png" target="_blank"><img src="./gallery-preview/vylXD_Full.png"></a>
-    </div>
+    <p class="gallery-carousel__hint">Click an image for full resolution. Use arrows or swipe to browse.</p>
 </div>
