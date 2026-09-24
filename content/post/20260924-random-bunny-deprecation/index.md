@@ -6,7 +6,7 @@ slug: '2026/09/random-bunny-deprecation'
 ---
 
 After a good few years of fetching random images from subreddits, I'm
-officially deprecating [Random Bunny](/page/random-bunny). The repository has
+officially deprecating [Random Bunny](/random-bunny). The repository has
 been archived, and there will be no further releases.
 
 ## What happened
