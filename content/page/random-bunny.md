@@ -2,7 +2,7 @@
 title: Random Bunny
 description: Get a random image url from a subreddit of your choosing.
 date: '2024-03-30'
-modified: '2025-10-28T18:19:00'
+modified: '2026-09-24'
 aliases:
     - random-bunny
 license: CC BY-NC-ND
@@ -13,15 +13,18 @@ menu:
             icon: core/poly/package
 ---
 
+> **Deprecated:** Random Bunny has been discontinued due to Reddit API changes.
+> See the [deprecation announcement](/posts/2026/09/random-bunny-deprecation)
+> for details. The repository is archived and there will be no further releases.
+
 Random Bunny is an npm package for nodejs which lets you fetch a random image from a subreddit of your choosing! You can download it via [npm](https://www.npmjs.com/package/random-bunny).
 
 It also has a CLI you can use to interact with it as well! This can be downloaded via the releases page of the git repository.
 
 ## Links
-- [Git repository](https://git.vylpes.xyz/rabbitlabs/random-bunny)
+- [Git repository](https://git.vylpes.xyz/rabbitlabs/random-bunny) (archived)
 - [NPM](https://www.npmjs.com/package/random-bunny)
 - [Documentation](https://docs.vylpes.xyz/books/random-bunny)
-- [Report a bug](https://github.com/vylpes/random-bunny/issues/new)
 - [Email helpdesk](mailto:helpdesk@vylpes.com)
 - [Help fund](https://ko-fi.com/vylpes)
 
@@ -29,8 +32,7 @@ It also has a CLI you can use to interact with it as well! This can be downloade
 
 | Version                                | Progress                                         | Status         |
 | -------------------------------------- | ------------------------------------------------ | -------------- |
-| [2.4](/posts/2025/09/random-bunny-2-4) | 100% <progress max="100" value="100"></progress> | Current        |
-| 2.5                                    | 0% <progress max="100" value="0"></progress>     | In Development |
+| [2.4](/posts/2025/09/random-bunny-2-4) | 100% <progress max="100" value="100"></progress> | Discontinued   |
 
 ### Previous Versions
 
@@ -40,6 +42,7 @@ It also has a CLI you can use to interact with it as well! This can be downloade
 | [2.3](/posts/2024/08/random-bunny-2-3) | 100% <progress max="100" value="100"></progress> | Discontinued   |
 
 ## Articles
+- **24/09/2026**: [Deprecating Random Bunny](/posts/2026/09/random-bunny-deprecation)
 - **23/09/2025**: [Random Bunny 2.4 Release](/posts/2025/09/random-bunny-2-4)
 - **07/08/2024**: [Random Bunny 2.3 Release](/posts/2024/08/random-bunny-2-3)
 - **08/06/2024**: [Random Bunny 2.2 Release](/posts/2024/06/random-bunny-2-2)
